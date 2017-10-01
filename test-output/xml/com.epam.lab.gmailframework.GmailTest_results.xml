@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="262.261">
+           time="241.338">
   <properties />
   
   
-            <testcase name="testGmailFunctionality" time="63.468" classname="com.epam.lab.gmailframework.GmailTest" />
-                <testcase name="testGmailFunctionality" time="52.508" classname="com.epam.lab.gmailframework.GmailTest" />
-                <testcase name="testGmailFunctionality" time="32.720" classname="com.epam.lab.gmailframework.GmailTest" />
-                <testcase name="testGmailFunctionality" time="44.470" classname="com.epam.lab.gmailframework.GmailTest" />
-                <testcase name="testGmailFunctionality" time="69.095" classname="com.epam.lab.gmailframework.GmailTest" />
+            <testcase name="testGmailFunctionality" time="32.842" classname="com.epam.lab.gmailframework.GmailTest" />
+                <testcase name="testGmailFunctionality" time="38.244" classname="com.epam.lab.gmailframework.GmailTest" />
+                <testcase name="testGmailFunctionality" time="49.060" classname="com.epam.lab.gmailframework.GmailTest" />
+                <testcase name="testGmailFunctionality" time="57.046" classname="com.epam.lab.gmailframework.GmailTest" />
+                <testcase name="testGmailFunctionality" time="64.146" classname="com.epam.lab.gmailframework.GmailTest" />
       
 </testsuite>

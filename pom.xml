@@ -30,6 +30,9 @@
                             <value>org.uncommons.reportng.HTMLReporter, com.epam.lab.gmailframework.utils.testngreporting.TestNGListener, org.uncommons.reportng.JUnitXMLReporter</value>
                         </property>
                     </properties>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testngsuite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
 
