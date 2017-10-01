@@ -11,7 +11,7 @@
     </users>
     <users>
         <userEmail>balatskiyandr@gmail.com</userEmail>
-        <userPassword>963852741bal1</userPassword>
+        <userPassword>963852741bal</userPassword>
         <letter>
             <contentLetter>It's letter sent from testng selenium test to Tarchanihor@gmail.com</contentLetter>
             <receiverEmail>Tarchanihor@gmail.com</receiverEmail>
@@ -28,7 +28,7 @@
         </letter>
     </users>
     <users>
-        <userEmail>balatskiyandr@gmail.com1</userEmail>
+        <userEmail>balatskiyandr@gmail.com</userEmail>
         <userPassword>963852741bal</userPassword>
         <letter>
             <contentLetter>It's letter sent from testng selenium test to Tarchanihor@gmail.com</contentLetter>

@@ -16,12 +16,9 @@ public class WebDriverUtils {
             return WEB_DRIVER_THREAD_LOCAL.get();
         }
         System.setProperty(configurationProperties.getWebDriverName(), configurationProperties.getWebDriverPath());
-
         WebDriver webDriverInstance = new ChromeDriver();
         WEB_DRIVER_THREAD_LOCAL.set(webDriverInstance);
         //WEB_DRIVER_THREAD_LOCAL.get().manage().window().maximize();
-        WEB_DRIVER_THREAD_LOCAL.get().manage().timeouts().setScriptTimeout(configurationProperties.getTimeOutInSeconds(), TimeUnit.SECONDS);
-        WEB_DRIVER_THREAD_LOCAL.get().manage().timeouts().pageLoadTimeout(configurationProperties.getTimeOutInSeconds(), TimeUnit.SECONDS);
         WEB_DRIVER_THREAD_LOCAL.get().manage().timeouts().implicitlyWait(configurationProperties.getTimeOutInSeconds(), TimeUnit.SECONDS);
         return WEB_DRIVER_THREAD_LOCAL.get();
     }

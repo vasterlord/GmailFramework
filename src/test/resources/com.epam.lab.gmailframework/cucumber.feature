@@ -4,7 +4,7 @@ Feature: Gmail login
     Given I go to Gmail login page
 
   Scenario Outline:
-    When <email>  email entered
+    When <email> email entered
     And <password> password entered
     Then Compose button should be available
     And Quit
