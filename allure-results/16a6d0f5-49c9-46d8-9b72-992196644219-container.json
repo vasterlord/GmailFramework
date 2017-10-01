@@ -1,1 +1,0 @@
-{"uuid":"16a6d0f5-49c9-46d8-9b72-992196644219","name":"com.epam.lab.gmailframework.GmailTest.tearDown","description":"","start":1506628772896,"stop":1506628774562,"children":["62913562-76f2-4ade-84b7-67342eac1c18"],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","start":1506628772896,"stop":1506628774561}]}
