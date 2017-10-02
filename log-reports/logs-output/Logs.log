@@ -108,3 +108,9 @@
 ]=GmailTest.testGmailFunctionality(com.epam.lab.gmailframework.models.User)[pri:0, instance:com.epam.lab.gmailframework.GmailTest@4e1d422d]}]
 [ERROR] [2017-10-01 22:53:58] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testngreporting.TestNGListener, method: onFinish, line: 41, msg: Failed tests:[ResultMap map={}]
 [INFO ] [2017-10-01 22:53:58] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testngreporting.TestNGListener, method: onFinish, line: 51, msg: The end executing suite: TestNG suite 
+[INFO ] [2017-10-02 11:08:27] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-02 11:08:27] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-02 11:10:08] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-02 11:10:08] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-02 11:10:57] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-02 11:10:57] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser

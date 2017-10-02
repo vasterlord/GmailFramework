@@ -8,9 +8,9 @@ import cucumber.junit.Cucumber;
         features = "com.epam.lab.gmailframework/",
         format = {
                 "pretty",
-                "html:target/cucumber-reports/cucumber-html-report",
-                "json:target/cucumber-reports/cucumber-json-report/cucumber.json",
-                "junit:target/cucumber-reports/cucumber-xml-reports/cucumber-junit-results.xml"
+                "html:target/cucumber-html-report",
+                "json:target/cucumber.json",
+                "junit:target/cucumber-junit-results.xml"
         },
         glue = "com.epam.lab.gmailframework.steps",
         tags = {"~@ignored"}

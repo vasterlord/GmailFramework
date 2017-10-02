@@ -35,29 +35,6 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
-            <plugin>
-                <groupId>com.github.temyers</groupId>
-                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <id>generateRunners</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>generateRunners</goal>
-                        </goals>
-                        <configuration>
-                            <glue>com.epam.lab.gmailframework.steps</glue>
-                            <featuresDirectory>src\test\resources\com.epam.lab.gmailframework</featuresDirectory>
-                            <cucumberOutputDir>target</cucumberOutputDir>
-                            <format>html</format>
-                            <tags>"~@ignored"</tags>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
 
