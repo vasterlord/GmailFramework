@@ -39,9 +39,12 @@
                             <value>org.uncommons.reportng.HTMLReporter, com.epam.lab.gmailframework.utils.testngreporting.TestNGListener, org.uncommons.reportng.JUnitXMLReporter</value>
                         </property>
                     </properties>
+                    <parallel>classes</parallel>
+                    <threadCount>3</threadCount>
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
     <properties>
