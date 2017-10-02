@@ -2,6 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.epam.lab.gmailframework</groupId>
+    <artifactId>GmailFramework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <repositories>
         <repository>
             <id>java.net</id>
@@ -9,9 +13,6 @@
         </repository>
     </repositories>
 
-    <groupId>com.epam.lab.gmailframework</groupId>
-    <artifactId>GmailFramework</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
             <plugin>
@@ -23,6 +24,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
@@ -33,42 +35,10 @@
                             <value>false</value>
                         </property>
                         <property>
-                        <name>listeners</name>
+                            <name>listeners</name>
                             <value>org.uncommons.reportng.HTMLReporter, com.epam.lab.gmailframework.utils.testngreporting.TestNGListener, org.uncommons.reportng.JUnitXMLReporter</value>
                         </property>
                     </properties>
-                </configuration>
-            </plugin>
-            <!-- -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>resources</goal>
-                            <goal>testResources</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.7</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>src/main/generated-groovy-stubs</directory>
-                        </fileset>
-                    </filesets>
                 </configuration>
             </plugin>
         </plugins>
@@ -97,11 +67,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>3.0</version>
         </dependency>
+
         <dependency>
             <groupId>velocity</groupId>
             <artifactId>velocity-dep</artifactId>
@@ -138,6 +110,13 @@
 
         <dependency>
             <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.0.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>1.0.2</version>
             <scope>test</scope>
@@ -166,6 +145,7 @@
             <artifactId>selenium-java</artifactId>
             <version>2.47.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
