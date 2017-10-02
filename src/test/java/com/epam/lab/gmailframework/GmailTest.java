@@ -20,7 +20,7 @@ public class GmailTest {
         WebDriverUtils.quit();
     }
 
-    @Test(dataProvider = "testData")
+    @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
         gmailLoginBO.signIn(user);
