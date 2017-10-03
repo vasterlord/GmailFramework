@@ -9,7 +9,7 @@ import org.testng.Reporter;
 
 public class TestNGReportAppender extends AppenderSkeleton
 {
-    @Step(value = "TestNGReportAppender")
+
     @Override
     protected synchronized void append(final LoggingEvent event)
     {
