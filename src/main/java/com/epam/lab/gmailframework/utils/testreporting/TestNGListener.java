@@ -1,7 +1,5 @@
 package com.epam.lab.gmailframework.utils.testreporting;
 
-
-import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.testng.*;
 
@@ -15,7 +13,6 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
         String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was success");

@@ -2,8 +2,12 @@ package com.epam.lab.gmailframework.businessobjects;
 
 import com.epam.lab.gmailframework.models.Letter;
 import com.epam.lab.gmailframework.pageobjects.GmailHomePage;
+import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
+import org.apache.log4j.Logger;
 
 public class GmailHomeBO {
+
+    private static final Logger LOGGER = Logger.getLogger(GmailHomeBO.class);
 
     private GmailHomePage gmailHomePage;
 
@@ -25,6 +29,12 @@ public class GmailHomeBO {
         gmailHomePage.sendLetterFromDraft();
         gmailHomePage.getLetterFromSent();
         return gmailHomePage.isSavedInSent(letter.getSubjectText(), letter.getContentLetter());
+    }
+
+    public void logginingQuite() {
+        String logMessage = "Quiting browser";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
 }

@@ -108,7 +108,7 @@ public class GmailHomePage extends PageObject {
         } else {
             logMessage = String.format("Message didn't save in %s", lettersSectionName);
             AllureStepListener.log(logMessage);
-            LOGGER.info(logMessage);
+            LOGGER.error(logMessage);
             return false;
         }
     }

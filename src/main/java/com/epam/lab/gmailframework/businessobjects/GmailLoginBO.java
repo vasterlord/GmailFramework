@@ -13,13 +13,4 @@ public class GmailLoginBO {
         gmailLoginPage.typeLoginAndSubmit(user.getUserEmail());
         gmailLoginPage.typePasswordAndSubmit(user.getUserPassword());
     }
-
-    public void passLogin(String user) {
-        gmailLoginPage = new GmailLoginPage();
-        gmailLoginPage.typeLoginAndSubmit(user);
-    }
-
-    public void passPassword(String user) {
-        gmailLoginPage.typePasswordAndSubmit(user);
-    }
 }
