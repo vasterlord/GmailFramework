@@ -13,6 +13,7 @@ public class Just {
     @Title("first")
     @Test
     public void test(){
+        LOGGER.info("Test");
         Assert.assertTrue(true);
     }
 }
