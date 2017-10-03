@@ -29,7 +29,7 @@ public class GmailTest {
     @Step(value = "gmail test")
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
-        AllureLogger.logToAllure("Start test");
+        AllureLogger.logToAllure("Start testttttttttt");
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
         gmailLoginBO.signIn(user);
         GmailHomeBO gmailHomeBO = new GmailHomeBO();
