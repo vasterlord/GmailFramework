@@ -22,7 +22,6 @@ public class GmailTest {
 
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
-        AllureStepListener.log("Start testttttttttt");
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
         gmailLoginBO.signIn(user);
         GmailHomeBO gmailHomeBO = new GmailHomeBO();

@@ -8,6 +8,7 @@ import ru.yandex.qatools.allure.Allure;
 import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.allure.events.StepFinishedEvent;
 import ru.yandex.qatools.allure.events.StepStartedEvent;
+import ru.yandex.qatools.allure.events.TestCaseFailureEvent;
 import ru.yandex.qatools.allure.experimental.LifecycleListener;
 
 public class AllureStepListener extends LifecycleListener {
@@ -16,9 +17,9 @@ public class AllureStepListener extends LifecycleListener {
 
     @Step("{0}")
     public synchronized static void log(String message) {
-        LOGGER.info("Logged to allure: " + message);
         Allure.LIFECYCLE.fire(new StepStartedEvent(message));
         Allure.LIFECYCLE.fire(new StepFinishedEvent());
+        Allure.LIFECYCLE.fire(new TestCaseFailureEvent());
         Reporter.log(message);
     }
 }
