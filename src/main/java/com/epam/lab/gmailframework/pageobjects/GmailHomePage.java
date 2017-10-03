@@ -102,12 +102,12 @@ public class GmailHomePage extends PageObject {
         boolean isSaved = false;
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
             String logPositiveMessage = String.format("Message successfully saved in %s", lettersSectionName);
-            //AllureStepListener.log(logPositiveMessage);
+            AllureStepListener.log(logPositiveMessage);
             LOGGER.info(logPositiveMessage);
             isSaved = true;
         } else {
             String logNegativeMessage = String.format("Message didn't save in %s", lettersSectionName);
-            //AllureStepListener.log(logNegativeMessage);
+            AllureStepListener.log(logNegativeMessage);
             LOGGER.error(logNegativeMessage);
             isSaved = false;
         }
