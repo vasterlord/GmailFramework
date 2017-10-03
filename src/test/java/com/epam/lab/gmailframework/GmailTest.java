@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class GmailTest {
-    public static final String TEST_METHOD_RESULT_WAS_FAILURE = "Test method result was failure: ";
+    
+    private static final String TEST_METHOD_RESULT_WAS_FAILURE = "Test method result was failure: ";
 
     @AfterMethod
     public void tearDown() throws Exception {
@@ -36,7 +37,7 @@ public class GmailTest {
             testMethodLogMessage = "Test method result was success";
             AllureStepListener.log(testMethodLogMessage);
         }  finally {
-            String quiteLogMessage = "Test method has stopped";
+            String quiteLogMessage = "Test method was completed";
             AllureStepListener.log(quiteLogMessage);
             quiteLogMessage = "Quiting browser";
             AllureStepListener.log(quiteLogMessage);
