@@ -31,10 +31,4 @@ public class GmailHomeBO {
         return gmailHomePage.isSavedInSent(letter.getSubjectText(), letter.getContentLetter());
     }
 
-    public void logginingQuite() {
-        String logMessage = "Quiting browser";
-        AllureStepListener.log(logMessage);
-        LOGGER.info(logMessage);
-    }
-
 }
