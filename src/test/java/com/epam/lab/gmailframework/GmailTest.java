@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class GmailTest {
-    
+
     private static final String TEST_METHOD_RESULT_WAS_FAILURE = "Test method result was failure: ";
 
     @AfterMethod
