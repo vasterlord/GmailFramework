@@ -99,17 +99,15 @@ public class GmailHomePage extends PageObject {
     }
 
     private boolean isSavedInSection(String subjectText, String contentLetterText, String lettersSectionName) {
-        String logMessage;
-        waitPresenceOfElement("(//table[@class='F cf zt']/tbody/tr[1]/td[6]/div[1]/div[1]/div[1]/span)[3]");
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
-            logMessage = String.format("Message successfully saved in %s", lettersSectionName);
-            AllureStepListener.log(logMessage);
-            LOGGER.info(logMessage);
+            String logPositiveMessage = String.format("Message successfully saved in %s", lettersSectionName);
+            AllureStepListener.log(logPositiveMessage);
+            LOGGER.info(logPositiveMessage);
             return true;
         } else {
-            logMessage = String.format("Message didn't save in %s", lettersSectionName);
-            AllureStepListener.log(logMessage);
-            LOGGER.error(logMessage);
+            String logNegativeMessage = String.format("Message didn't save in %s", lettersSectionName);
+            AllureStepListener.log(logNegativeMessage);
+            LOGGER.error(logNegativeMessage);
             return false;
         }
     }
