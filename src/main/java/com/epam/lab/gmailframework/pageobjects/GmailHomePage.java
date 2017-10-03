@@ -111,9 +111,6 @@ public class GmailHomePage extends PageObject {
             LOGGER.error(logNegativeMessage);
             isSaved = false;
         }
-        String quiteLogMessage = "Quiting browser";
-        AllureStepListener.log(quiteLogMessage);
-        LOGGER.info(quiteLogMessage);
         return isSaved;
     }
 
