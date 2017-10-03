@@ -99,7 +99,8 @@ public class GmailHomePage extends PageObject {
     }
 
     private boolean isSavedInSection(String subjectText, String contentLetterText, String lettersSectionName) {
-        String logMessage = "";
+        String logMessage;
+        waitPresenceOfElement("(//table[@class='F cf zt']/tbody/tr[1]/td[6]/div[1]/div[1]/div[1]/span)[3]");
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
             logMessage = String.format("Message successfully saved in %s", lettersSectionName);
             AllureStepListener.log(logMessage);
