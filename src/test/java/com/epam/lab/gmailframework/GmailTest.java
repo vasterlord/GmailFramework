@@ -3,6 +3,7 @@ package com.epam.lab.gmailframework;
 import com.epam.lab.gmailframework.businessobjects.GmailHomeBO;
 import com.epam.lab.gmailframework.businessobjects.GmailLoginBO;
 import com.epam.lab.gmailframework.models.User;
+import com.epam.lab.gmailframework.pageobjects.AllureLogger;
 import com.epam.lab.gmailframework.utils.DataUtils;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
 import io.qameta.allure.Attachment;
@@ -26,6 +27,7 @@ public class GmailTest {
     @Step(value = "gmail test")
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
+        AllureLogger.logToAllure("Start test");
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
         gmailLoginBO.signIn(user);
         GmailHomeBO gmailHomeBO = new GmailHomeBO();
