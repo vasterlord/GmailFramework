@@ -2,6 +2,7 @@ package com.epam.lab.gmailframework.utils.testreporting;
 
 import org.apache.log4j.Logger;
 import org.testng.*;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.allure.testng.AllureTestListener;
 
@@ -9,6 +10,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
 
     private static final Logger LOGGER = Logger.getLogger(TestNGListener.class);
 
+    @Attachment
     @Step
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -17,6 +19,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
@@ -25,6 +28,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onTestFailure(ITestResult iTestResult) {
@@ -33,6 +37,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.error(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
@@ -41,11 +46,13 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.error(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
     }
 
+    @Attachment
     @Step
     @Override
     public void onStart(ITestContext iTestContext) {
@@ -54,6 +61,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onFinish(ITestContext iTestContext) {
@@ -65,6 +73,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logPFailedTestsMessage );
     }
 
+    @Attachment
     @Step
     @Override
     public void onStart(ISuite iSuite) {
@@ -73,6 +82,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
+    @Attachment
     @Step
     @Override
     public void onFinish(ISuite iSuite) {

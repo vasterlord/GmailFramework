@@ -12,6 +12,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Attachment;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.util.List;
 
@@ -19,8 +21,13 @@ public class GmailTest {
 
     private static final Logger LOGGER = Logger.getLogger(GmailLoginPage.class);
 
+    @Attachment
+    @Step
     @AfterMethod
     public void tearDown() throws Exception {
+        String quiteLogMessage = "@AfterMethod";
+        AllureStepListener.log(quiteLogMessage);
+        LOGGER.info(quiteLogMessage);
         WebDriverUtils.quit();
     }
 
