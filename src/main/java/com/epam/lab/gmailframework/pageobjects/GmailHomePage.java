@@ -5,6 +5,7 @@ import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.Label;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -48,6 +49,7 @@ public class GmailHomePage extends PageObject {
     public GmailHomePage() {
     }
 
+    @Step(value = "wrt let")
     public void writeLetter(String receiverText, String subjectText, String contentLetterText) {
         waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
         writeActionElement.click();

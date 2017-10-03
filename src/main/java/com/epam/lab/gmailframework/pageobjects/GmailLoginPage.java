@@ -3,6 +3,7 @@ package com.epam.lab.gmailframework.pageobjects;
 
 import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.TextInput;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 public class GmailLoginPage extends PageObject {
@@ -24,6 +25,7 @@ public class GmailLoginPage extends PageObject {
         this.webDriver.navigate().to(signInElement.getAttribute("href"));
     }
 
+    @Step(value = "login")
     public void typeLoginAndSubmit(String email) {
         inputEmailElement.sendKeys(email);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");

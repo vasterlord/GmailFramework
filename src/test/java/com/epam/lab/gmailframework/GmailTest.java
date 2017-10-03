@@ -17,10 +17,12 @@ import java.util.List;
 
 public class GmailTest {
 
+    @Step(value = "tear down aft meth")
     @AfterMethod
     public void tearDown() throws Exception {
         WebDriverUtils.quit();
     }
+
     @Step(value = "gmail test")
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
@@ -32,7 +34,7 @@ public class GmailTest {
         Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
     }
 
-    @Attachment
+    @Step(value = "dataprov")
     @DataProvider(name = "testData", parallel = true)
     public static Object[][] getTestData() throws Exception {
         List<User> userList = DataUtils.getUsersDataFromXML().getUsers();
