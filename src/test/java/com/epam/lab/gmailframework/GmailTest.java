@@ -32,7 +32,6 @@ public class GmailTest {
         Assert.assertTrue(gmailHomeBO.isSignIn());
         Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()));
         Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
-        gmailHomeBO.logginingQuite();
     }
 
     @DataProvider(name = "testData", parallel = true)
