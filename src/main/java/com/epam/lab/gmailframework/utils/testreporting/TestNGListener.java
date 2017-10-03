@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.testng.*;
 
 public class TestNGListener implements ITestListener, ISuiteListener {
+
     private static final Logger LOGGER = Logger.getLogger(TestNGListener.class);
 
     @Override
@@ -20,6 +21,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.info(logMessage);
     }
 
+
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was failure");
@@ -34,9 +36,11 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         LOGGER.error(logMessage);
     }
 
+
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
     }
+
 
     @Override
     public void onStart(ITestContext iTestContext) {
@@ -51,9 +55,10 @@ public class TestNGListener implements ITestListener, ISuiteListener {
         AllureStepListener.log(logPassedTestsMessage);
         LOGGER.info(logPassedTestsMessage);
         String logPFailedTestsMessage = String.format("Failed tests: %s", iTestContext.getFailedTests());
-        AllureStepListener.log(logPFailedTestsMessage );
-        LOGGER.info(logPFailedTestsMessage );
+        AllureStepListener.log(logPFailedTestsMessage);
+        LOGGER.info(logPFailedTestsMessage);
     }
+
 
     @Override
     public void onStart(ISuite iSuite) {

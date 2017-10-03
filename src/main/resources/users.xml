@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <users>
     <users>
+        <userEmail>Tarchanihor@gmail.com</userEmail>
+        <userPassword>qweqweqwe</userPassword>
+        <letter>
+            <contentLetter>It's letter sent from testng selenium test to balatskiyandr@gmail.com</contentLetter>
+            <receiverEmail>balatskiyandr@gmail.com</receiverEmail>
+            <subjectText>Selenium letter subject from Tarchanihor@gmail.com</subjectText>
+        </letter>
+    </users>
+    <users>
         <userEmail>tuserfirst@gmail.com</userEmail>
         <userPassword>tuserfirst12345</userPassword>
         <letter>
@@ -19,8 +28,8 @@
         </letter>
     </users>
     <users>
-        <userEmail>Tarchanihor@gmail.com</userEmail>
-        <userPassword>qweqweqwe</userPassword>
+        <userEmail>tuserfirst@gmail.com</userEmail>
+        <userPassword>tuserfirst12345</userPassword>
         <letter>
             <contentLetter>It's letter sent from testng selenium test to balatskiyandr@gmail.com</contentLetter>
             <receiverEmail>balatskiyandr@gmail.com</receiverEmail>
@@ -34,15 +43,6 @@
             <contentLetter>It's letter sent from testng selenium test to Tarchanihor@gmail.com</contentLetter>
             <receiverEmail>tuserfirst@gmail.com</receiverEmail>
             <subjectText>Selenium letter subject from balatskiyandr@gmail.com</subjectText>
-        </letter>
-    </users>
-    <users>
-        <userEmail>Tarchanihor@gmail.com</userEmail>
-        <userPassword>qweqweqwe</userPassword>
-        <letter>
-            <contentLetter>It's letter sent from testng selenium test to balatskiyandr@gmail.com</contentLetter>
-            <receiverEmail>balatskiyandr@gmail.com</receiverEmail>
-            <subjectText>Selenium letter subject from tuserfirst@gmail.com</subjectText>
         </letter>
     </users>
 </users>
