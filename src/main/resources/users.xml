@@ -27,7 +27,7 @@
             <subjectText>Selenium letter subject from Tarchanihor@gmail.com</subjectText>
         </letter>
     </users>
-    <!--<users>
+    <users>
         <userEmail>balatskiyandr@gmail.com</userEmail>
         <userPassword>963852741bal</userPassword>
         <letter>
@@ -44,5 +44,5 @@
             <receiverEmail>balatskiyandr@gmail.com</receiverEmail>
             <subjectText>Selenium letter subject from tuserfirst@gmail.com</subjectText>
         </letter>
-    </users>-->
+    </users>
 </users>
