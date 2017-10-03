@@ -28,7 +28,6 @@ public class WebDriverUtils {
 
     public static void quit() {
         try {
-            LOGGER.info("Quiting browser");
             WEB_DRIVER_THREAD_LOCAL.get().quit();
         } finally {
             WEB_DRIVER_THREAD_LOCAL.remove();

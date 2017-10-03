@@ -5,6 +5,8 @@ import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.Label;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
+import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
+import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -51,19 +53,27 @@ public class GmailHomePage extends PageObject {
     public void writeLetter(String receiverText, String subjectText, String contentLetterText) {
         waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
         writeActionElement.click();
-        LOGGER.info("Compose button was clicked");
+        String logMessage = "Compose button was clicked";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         receiverElement.sendKeys(receiverText);
         subjectElement.sendKeys(subjectText);
         contentLetterElement.sendKeys(contentLetterText);
-        LOGGER.info("Letter successfully was written");
+        logMessage = "Letter successfully was written";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         closeLetterActionElement.click();
-        LOGGER.info("Letter was closed");
+        logMessage = "Letter was closed";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
     public boolean isLoggedIn() {
         waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
         if (writeActionElement.isFullEnabled()) {
-            LOGGER.info("User successfully logged in");
+            String logMessage = "User successfully logged in";
+            AllureStepListener.log(logMessage);
+            LOGGER.info(logMessage);
             return true;
         } else {
             return false;
@@ -89,11 +99,16 @@ public class GmailHomePage extends PageObject {
     }
 
     private boolean isSavedInSection(String subjectText, String contentLetterText, String lettersSectionName) {
+        String logMessage = "";
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
-            LOGGER.info(String.format("Message successfully saved in %s", lettersSectionName));
+            logMessage = String.format("Message successfully saved in %s", lettersSectionName);
+            AllureStepListener.log(logMessage);
+            LOGGER.info(logMessage);
             return true;
         } else {
-            LOGGER.info(String.format("Message didn't save in %s", lettersSectionName));
+            logMessage = String.format("Message didn't save in %s", lettersSectionName);
+            AllureStepListener.log(logMessage);
+            LOGGER.error(logMessage);
             return false;
         }
     }
@@ -102,12 +117,16 @@ public class GmailHomePage extends PageObject {
         letterSubjectElement.click();
         waitPresenceOfElement("//div[@class='T-I J-J5-Ji aoO T-I-atl L3']");
         sendLetterActionElement.click();
-        LOGGER.info("Message from draft successfully sent");
+        String logMessage = "Message from draft successfully sent";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
     private void getLettersFromSection(String maiLSectionURL) {
         this.webDriver.navigate().to(maiLSectionURL);
-        LOGGER.info(String.format("Navigate to: %s", maiLSectionURL));
+        String logMessage = String.format("Navigate to: %s", maiLSectionURL);
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         new WebDriverWait(WebDriverUtils.getWebDriverThreadLocal(), configurationProperties.getTimeOutInSeconds()).until(ExpectedConditions.urlToBe(maiLSectionURL));
     }
 

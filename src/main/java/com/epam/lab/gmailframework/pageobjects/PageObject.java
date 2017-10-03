@@ -3,6 +3,8 @@ package com.epam.lab.gmailframework.pageobjects;
 import com.epam.lab.gmailframework.controls.decorataion.CustomFieldDecorator;
 import com.epam.lab.gmailframework.utils.ConfigurationProperties;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
+import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageObject {
-
+    private static final Logger LOGGER = Logger.getLogger(PageObject.class);
     protected ConfigurationProperties configurationProperties;
     protected WebDriver webDriver = WebDriverUtils.getWebDriverThreadLocal();
 

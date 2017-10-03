@@ -1,65 +1,72 @@
 package com.epam.lab.gmailframework.utils.testreporting;
 
-
-import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.testng.*;
 
 public class TestNGListener implements ITestListener, ISuiteListener {
     private static final Logger LOGGER = Logger.getLogger(TestNGListener.class);
 
-    @Step(value = "test")
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        LOGGER.info(String.format("Test method has started running: %s", iTestResult.getMethod().getMethodName()));
+        String logMessage = String.format("Test method has started running: %s", iTestResult.getMethod().getMethodName());
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        LOGGER.info(String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was success"));
+        String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was success");
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        LOGGER.error(String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was failure"));
+        String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was failure");
+        AllureStepListener.log(logMessage);
+        LOGGER.error(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        LOGGER.error(String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), "  was skipped"));
+        String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), "  was skipped");
+        AllureStepListener.log(logMessage);
+        LOGGER.error(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
     }
 
-    @Step(value = "test")
     @Override
     public void onStart(ITestContext iTestContext) {
-        LOGGER.info(String.format("About to begin executing test: %s", iTestContext.getName()));
+        String logMessage = String.format("About to begin executing test: %s", iTestContext.getName());
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onFinish(ITestContext iTestContext) {
-        LOGGER.info("Passed tests: " + iTestContext.getPassedTests());
-        LOGGER.error("Failed tests:" + iTestContext.getFailedTests());
+        String logPassedTestsMessage = String.format("Passed tests: %s", iTestContext.getPassedTests());
+        AllureStepListener.log(logPassedTestsMessage);
+        LOGGER.info(logPassedTestsMessage);
+        String logPFailedTestsMessage = String.format("Failed tests: %s", iTestContext.getFailedTests());
+        AllureStepListener.log(logPFailedTestsMessage );
+        LOGGER.info(logPFailedTestsMessage );
     }
 
-    @Step(value = "test")
     @Override
     public void onStart(ISuite iSuite) {
-        LOGGER.info(String.format("Begin executing suite: %s ", iSuite.getName()));
+        String logMessage = String.format("Begin executing suite: %s ", iSuite.getName());
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
-    @Step(value = "test")
     @Override
     public void onFinish(ISuite iSuite) {
-        LOGGER.info(String.format("The end executing suite: %s ", iSuite.getName()));
+        String logMessage = String.format("The end executing suite: %s ", iSuite.getName());
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
     }
 
 }
