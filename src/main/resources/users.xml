@@ -29,7 +29,7 @@
     </users>
     <users>
         <userEmail>balatskiyandr@gmail.com</userEmail>
-        <userPassword>963852741bal</userPassword>
+        <userPassword>963852741bal1</userPassword>
         <letter>
             <contentLetter>It's letter sent from testng selenium test to Tarchanihor@gmail.com</contentLetter>
             <receiverEmail>tuserfirst@gmail.com</receiverEmail>
