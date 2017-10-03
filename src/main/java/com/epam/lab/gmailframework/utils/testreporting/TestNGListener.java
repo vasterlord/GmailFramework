@@ -2,8 +2,10 @@ package com.epam.lab.gmailframework.utils.testreporting;
 
 import org.apache.log4j.Logger;
 import org.testng.*;
+import ru.yandex.qatools.allure.testng.AllureTestListener;
 
-public class TestNGListener implements ITestListener, ISuiteListener {
+public class TestNGListener extends AllureTestListener implements ITestListener, ISuiteListener {
+
     private static final Logger LOGGER = Logger.getLogger(TestNGListener.class);
 
     @Override
