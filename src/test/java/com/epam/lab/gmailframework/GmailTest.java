@@ -5,6 +5,8 @@ import com.epam.lab.gmailframework.businessobjects.GmailLoginBO;
 import com.epam.lab.gmailframework.models.User;
 import com.epam.lab.gmailframework.utils.DataUtils;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
@@ -19,7 +21,7 @@ public class GmailTest {
     public void tearDown() throws Exception {
         WebDriverUtils.quit();
     }
-
+    @Step(value = "gmail test")
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
@@ -30,6 +32,7 @@ public class GmailTest {
         Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
     }
 
+    @Attachment
     @DataProvider(name = "testData", parallel = true)
     public static Object[][] getTestData() throws Exception {
         List<User> userList = DataUtils.getUsersDataFromXML().getUsers();
