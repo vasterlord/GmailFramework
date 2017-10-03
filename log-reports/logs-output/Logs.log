@@ -140,3 +140,36 @@
 ]=GmailTest.testGmailFunctionality(com.epam.lab.gmailframework.models.User)[pri:0, instance:com.epam.lab.gmailframework.GmailTest@6321e813]}]
 [ERROR] [2017-10-03 17:40:06] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 50, msg: Failed tests:[ResultMap map={}]
 [INFO ] [2017-10-03 17:40:06] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 62, msg: The end executing suite: TestNG suite 
+[INFO ] [2017-10-03 17:48:58] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 17:48:59] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 17:49:00] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 17:50:27] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-03 17:50:29] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-03 17:50:29] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 54, msg: Compose button was clicked
+[INFO ] [2017-10-03 17:50:29] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isLoggedIn, line: 66, msg: User successfully logged in
+[INFO ] [2017-10-03 17:50:30] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 54, msg: Compose button was clicked
+[INFO ] [2017-10-03 17:50:32] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 54, msg: Compose button was clicked
+[INFO ] [2017-10-03 17:50:35] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 58, msg: Letter successfully was written
+[INFO ] [2017-10-03 17:50:35] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 58, msg: Letter successfully was written
+[INFO ] [2017-10-03 17:50:35] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 60, msg: Letter was closed
+[INFO ] [2017-10-03 17:50:35] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#drafts
+[INFO ] [2017-10-03 17:50:35] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 60, msg: Letter was closed
+[INFO ] [2017-10-03 17:50:36] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#drafts
+[INFO ] [2017-10-03 17:50:36] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Drafts (28)
+[INFO ] [2017-10-03 17:50:36] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Drafts (24)
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 58, msg: Letter successfully was written
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: writeLetter, line: 60, msg: Letter was closed
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#drafts
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: sendLetterFromDraft, line: 105, msg: Message from draft successfully sent
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#sent
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: sendLetterFromDraft, line: 105, msg: Message from draft successfully sent
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#sent
+[INFO ] [2017-10-03 17:50:37] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Sent Mail
+[INFO ] [2017-10-03 17:50:38] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 17:50:38] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Sent Mail
+[INFO ] [2017-10-03 17:50:38] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 17:50:38] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Черновики (19)
+[INFO ] [2017-10-03 17:50:39] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: sendLetterFromDraft, line: 105, msg: Message from draft successfully sent
+[INFO ] [2017-10-03 17:50:39] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: getLettersFromSection, line: 110, msg: Navigate to: https://mail.google.com/mail/#sent
+[INFO ] [2017-10-03 17:50:39] file: GmailHomePage.java, class: com.epam.lab.gmailframework.pageobjects.GmailHomePage, method: isSavedInSection, line: 93, msg: Message successfully saved in Отправленные
+[INFO ] [2017-10-03 17:50:39] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser

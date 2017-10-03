@@ -21,6 +21,7 @@ public class GmailTest {
     public void tearDown() throws Exception {
         WebDriverUtils.quit();
     }
+
     @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
