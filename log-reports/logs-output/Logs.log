@@ -127,3 +127,22 @@
 ]=Just.test()[pri:0, instance:com.epam.lab.gmailframework.Just@4973813a]}]
 [ERROR] [2017-10-03 19:34:47] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 50, msg: Failed tests:[ResultMap map={}]
 [INFO ] [2017-10-03 19:34:47] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 62, msg: The end executing suite: TestNG suite 
+[INFO ] [2017-10-03 19:37:01] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:37:01] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:37:02] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:37:02] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:37:06] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:38:35] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:38:35] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:38:36] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:38:36] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:38:38] file: WebDriverUtils.java, class: com.epam.lab.gmailframework.utils.WebDriverUtils, method: quit, line: 31, msg: Quiting browser
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onStart, line: 56, msg: Begin executing suite: TestNG suite 
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onStart, line: 43, msg: About to begin executing test: GmailTestSuite
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onTestStart, line: 14, msg: Test method has started running: test
+[INFO ] [2017-10-03 19:42:22] file: Just.java, class: com.epam.lab.gmailframework.Just, method: test, line: 16, msg: Test
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onTestSuccess, line: 20, msg: Test method :test result was success
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 49, msg: Passed tests: [ResultMap map={[TestResult name=test status=SUCCESS method=Just.test()[pri:0, instance:com.epam.lab.gmailframework.Just@4973813a] output=2017-10-03 19:42:22 INFO TestNGListener.java, onTestStart - line 14: Test method has started running: test
+]=Just.test()[pri:0, instance:com.epam.lab.gmailframework.Just@4973813a]}]
+[ERROR] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 50, msg: Failed tests:[ResultMap map={}]
+[INFO ] [2017-10-03 19:42:22] file: TestNGListener.java, class: com.epam.lab.gmailframework.utils.testreporting.TestNGListener, method: onFinish, line: 62, msg: The end executing suite: TestNG suite 

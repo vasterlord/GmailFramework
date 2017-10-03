@@ -18,35 +18,35 @@ import java.util.List;
 
 public class GmailTest {
 
-    @Step(value = "tear down aft meth")
-    @AfterMethod
-    public void tearDown() throws Exception {
-        WebDriverUtils.quit();
-    }
-
-    @Step(value = "gmail test")
-    @Test(dataProvider = "testData", threadPoolSize = 3)
-    public void testGmailFunctionality(User user) {
-        AllureLogger.logToAllure("Start test");
-        GmailLoginBO gmailLoginBO = new GmailLoginBO();
-        gmailLoginBO.signIn(user);
-        GmailHomeBO gmailHomeBO = new GmailHomeBO();
-        Assert.assertTrue(gmailHomeBO.isSignIn());
-        Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()));
-        Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
-    }
-
-    @Step(value = "dataprov")
-    @DataProvider(name = "testData", parallel = true)
-    public static Object[][] getTestData() throws Exception {
-        List<User> userList = DataUtils.getUsersDataFromXML().getUsers();
-        int rowCount = userList.size();
-        int columnCount = 1;
-        Object[][] testData = new Object[rowCount][columnCount];
-        for (int i = 0; i < rowCount; i++) {
-            testData[i][0] = userList.get(i);
-        }
-        return testData;
-    }
+//    @Step(value = "tear down aft meth")
+//    @AfterMethod
+//    public void tearDown() throws Exception {
+//        WebDriverUtils.quit();
+//    }
+//
+//    @Step(value = "gmail test")
+//    @Test(dataProvider = "testData", threadPoolSize = 3)
+//    public void testGmailFunctionality(User user) {
+//        AllureLogger.logToAllure("Start test");
+//        GmailLoginBO gmailLoginBO = new GmailLoginBO();
+//        gmailLoginBO.signIn(user);
+//        GmailHomeBO gmailHomeBO = new GmailHomeBO();
+//        Assert.assertTrue(gmailHomeBO.isSignIn());
+//        Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()));
+//        Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
+//    }
+//
+//    @Step(value = "dataprov")
+//    @DataProvider(name = "testData", parallel = true)
+//    public static Object[][] getTestData() throws Exception {
+//        List<User> userList = DataUtils.getUsersDataFromXML().getUsers();
+//        int rowCount = userList.size();
+//        int columnCount = 1;
+//        Object[][] testData = new Object[rowCount][columnCount];
+//        for (int i = 0; i < rowCount; i++) {
+//            testData[i][0] = userList.get(i);
+//        }
+//        return testData;
+//    }
 
 }
