@@ -3,24 +3,28 @@ package com.epam.lab.gmailframework;
 import com.epam.lab.gmailframework.businessobjects.GmailHomeBO;
 import com.epam.lab.gmailframework.businessobjects.GmailLoginBO;
 import com.epam.lab.gmailframework.models.User;
+import com.epam.lab.gmailframework.pageobjects.GmailLoginPage;
+import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
 import com.epam.lab.gmailframework.utils.DataUtils;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
 public class GmailTest {
 
+    private static final Logger LOGGER = Logger.getLogger(GmailLoginPage.class);
+
     @AfterMethod
     public void tearDown() throws Exception {
         WebDriverUtils.quit();
     }
 
-    @Test(dataProvider = "testData")
+    @Test(dataProvider = "testData", threadPoolSize = 3)
     public void testGmailFunctionality(User user) {
         GmailLoginBO gmailLoginBO = new GmailLoginBO();
         gmailLoginBO.signIn(user);
@@ -28,6 +32,7 @@ public class GmailTest {
         Assert.assertTrue(gmailHomeBO.isSignIn());
         Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()));
         Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()));
+        gmailHomeBO.logginingQuite();
     }
 
     @DataProvider(name = "testData", parallel = true)

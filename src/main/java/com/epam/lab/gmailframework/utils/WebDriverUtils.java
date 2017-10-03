@@ -1,5 +1,6 @@
 package com.epam.lab.gmailframework.utils;
 
+import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +29,6 @@ public class WebDriverUtils {
 
     public static void quit() {
         try {
-            LOGGER.info("Quiting browser");
             WEB_DRIVER_THREAD_LOCAL.get().quit();
         } finally {
             WEB_DRIVER_THREAD_LOCAL.remove();

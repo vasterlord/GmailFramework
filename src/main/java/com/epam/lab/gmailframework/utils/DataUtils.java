@@ -1,23 +1,21 @@
 package com.epam.lab.gmailframework.utils;
 
-import com.epam.lab.gmailframework.models.*;
-import com.google.common.collect.Lists;
-import org.apache.commons.lang.ArrayUtils;
+import com.epam.lab.gmailframework.models.Letter;
+import com.epam.lab.gmailframework.models.User;
+import com.epam.lab.gmailframework.models.Users;
 import org.apache.log4j.Logger;
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
-import java.lang.reflect.Array;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public class DataUtils {
