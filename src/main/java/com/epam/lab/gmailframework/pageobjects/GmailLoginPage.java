@@ -44,6 +44,9 @@ public class GmailLoginPage extends PageObject {
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         inputEmailElement.sendKeys(email);
+        logMessage = String.format("Entered email: %s " , email);
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
     }
@@ -51,6 +54,9 @@ public class GmailLoginPage extends PageObject {
     public void typePasswordAndSubmit(String password) {
         waitPresenceOfElement("//div[normalize-space(@class)='Xb9hP']/input[normalize-space(@type)='password']");
         passwordElement.sendKeys(password);
+        String logMessage = String.format("Entered password: %s " , password);
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
     }
