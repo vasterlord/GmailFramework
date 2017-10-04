@@ -22,7 +22,7 @@ public class GmailTest {
         WebDriverUtils.quit();
     }
 
-    @Test(dataProvider = "testData", threadPoolSize = 3)
+    @Test(dataProvider = "testData")
     public void testGmailFunctionality(User user) {
         String testMethodLogMessage;
         try {
