@@ -36,7 +36,7 @@ public class GmailTest {
             Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()), TEST_METHOD_RESULT_WAS_FAILURE);
             testMethodLogMessage = "Test method result was success";
             AllureStepListener.log(testMethodLogMessage);
-        }  finally {
+        } finally {
             String quiteLogMessage = "Test method was completed";
             AllureStepListener.log(quiteLogMessage);
             quiteLogMessage = "Quiting browser";

@@ -1,10 +1,8 @@
 package com.epam.lab.gmailframework.pageobjects;
 
-
 import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
-import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
 
@@ -38,13 +36,12 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
     }
 
-    @Step(value = "login")
     public void typeLoginAndSubmit(String email) {
         String logMessage = "Entering credentials...";
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         inputEmailElement.sendKeys(email);
-        logMessage = String.format("Entered email: %s " , email);
+        logMessage = String.format("Entered email: %s ", email);
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
@@ -54,7 +51,7 @@ public class GmailLoginPage extends PageObject {
     public void typePasswordAndSubmit(String password) {
         waitPresenceOfElement("//div[normalize-space(@class)='Xb9hP']/input[normalize-space(@type)='password']");
         passwordElement.sendKeys(password);
-        String logMessage = String.format("Entered password: %s " , password);
+        String logMessage = String.format("Entered password: %s ", password);
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
