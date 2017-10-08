@@ -4,8 +4,11 @@ import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class GmailLoginPage extends PageObject {
     private static final Logger LOGGER = Logger.getLogger(GmailLoginPage.class);
@@ -23,7 +26,7 @@ public class GmailLoginPage extends PageObject {
     private TextInput passwordElement;
 
     @FindBy(xpath = "//div[normalize-space(@class)='dEOOab RxsGPe'][1]")
-    private WebElement wrongPasswordTextElement;
+    private List<WebElement> wrongPasswordTextElement;
 
     public GmailLoginPage() {
         String logMessage = "Starting browser";
@@ -51,7 +54,18 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
+        //waitingForWrongMessageElement();
         return verifyWrongMessage();
+    }
+
+    private void waitingForWrongMessageElement() {
+        try {
+            waitPresenceOfElement("//div[normalize-space(@class)='dEOOab RxsGPe'][1]");
+        } catch (TimeoutException e) {
+            String logMessage = "Wrong sign in message tried to load";
+            AllureStepListener.log(logMessage);
+            LOGGER.info(logMessage);
+        }
     }
 
     public boolean typePasswordAndSubmit(String password) {
@@ -62,14 +76,15 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
+        waitingForWrongMessageElement();
         return verifyWrongMessage();
     }
 
     private boolean verifyWrongMessage() {
         String logMessage;
         boolean result;
-        if (!wrongPasswordTextElement.getText().isEmpty()) {
-            logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.getAttribute("innerText"));
+        if (!wrongPasswordTextElement.get(0).getText().isEmpty()) {
+            logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.get(0).getAttribute("innerText"));
             AllureStepListener.log(logMessage);
             LOGGER.error(logMessage);
             result = false;
