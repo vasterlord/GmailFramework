@@ -10,13 +10,6 @@ public class GmailLoginBO {
 
     public boolean isSignIn(User user) {
         gmailLoginPage = new GmailLoginPage();
-        boolean singInResult = false;
-        if (gmailLoginPage.typeLoginAndSubmit(user.getUserEmail())) {
-            singInResult = true;
-        }
-        if (gmailLoginPage.typePasswordAndSubmit(user.getUserPassword())) {
-            singInResult = true;
-        }
-        return singInResult;
+        return gmailLoginPage.typeLoginAndSubmit(user.getUserEmail()) && gmailLoginPage.typePasswordAndSubmit(user.getUserPassword());
     }
 }
