@@ -26,7 +26,7 @@ public class GmailLoginPage extends PageObject {
     private TextInput passwordElement;
 
     @FindBy(xpath = "//div[normalize-space(@class)='dEOOab RxsGPe'][1]")
-    private List<WebElement> wrongPasswordTextElement;
+    private WebElement wrongPasswordTextElement;
 
     public GmailLoginPage() {
         String logMessage = "Starting browser";
@@ -83,8 +83,8 @@ public class GmailLoginPage extends PageObject {
     private boolean verifyWrongMessage() {
         String logMessage;
         boolean result;
-        if (!wrongPasswordTextElement.get(0).getText().isEmpty()) {
-            logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.get(0).getAttribute("innerText"));
+        if (!wrongPasswordTextElement.getText().isEmpty()) {
+            logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.getAttribute("innerText"));
             AllureStepListener.log(logMessage);
             LOGGER.error(logMessage);
             result = false;
