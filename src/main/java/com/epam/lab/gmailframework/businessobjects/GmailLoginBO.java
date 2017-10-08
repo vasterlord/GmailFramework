@@ -8,9 +8,15 @@ public class GmailLoginBO {
 
     private GmailLoginPage gmailLoginPage;
 
-    public void signIn(User user) {
+    public boolean isSignIn(User user) {
         gmailLoginPage = new GmailLoginPage();
-        gmailLoginPage.typeLoginAndSubmit(user.getUserEmail());
-        gmailLoginPage.typePasswordAndSubmit(user.getUserPassword());
+        boolean singInResult = false;
+        if (gmailLoginPage.typeLoginAndSubmit(user.getUserEmail())) {
+            singInResult = true;
+        }
+        if (gmailLoginPage.typePasswordAndSubmit(user.getUserPassword())) {
+            singInResult = true;
+        }
+        return singInResult;
     }
 }

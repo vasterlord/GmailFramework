@@ -4,6 +4,7 @@ import com.epam.lab.gmailframework.controls.Button;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GmailLoginPage extends PageObject {
@@ -21,12 +22,16 @@ public class GmailLoginPage extends PageObject {
     @FindBy(xpath = "//div[normalize-space(@class)='Xb9hP']/input[normalize-space(@type)='password']")
     private TextInput passwordElement;
 
+    @FindBy(xpath = "//div[normalize-space(@class)='dEOOab RxsGPe'][1]")
+    private WebElement wrongPasswordTextElement;
+
     public GmailLoginPage() {
-        AllureStepListener.log("Starting browser");
-        LOGGER.info("Starting browser");
+        String logMessage = "Starting browser";
+        AllureStepListener.log(logMessage);
+        LOGGER.info(logMessage);
         String startUrl = configurationProperties.getStartURL();
         this.webDriver.navigate().to(startUrl);
-        String logMessage = String.format("Navigate to: %s", startUrl);
+        logMessage = String.format("Navigate to: %s", startUrl);
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         String signInUrl = signInElement.getAttribute("href");
@@ -36,7 +41,7 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
     }
 
-    public void typeLoginAndSubmit(String email) {
+    public boolean typeLoginAndSubmit(String email) {
         String logMessage = "Entering credentials...";
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
@@ -46,9 +51,10 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
+        return verifyWrongMessage();
     }
 
-    public void typePasswordAndSubmit(String password) {
+    public boolean typePasswordAndSubmit(String password) {
         waitPresenceOfElement("//div[normalize-space(@class)='Xb9hP']/input[normalize-space(@type)='password']");
         passwordElement.sendKeys(password);
         String logMessage = String.format("Entered password: %s ", password);
@@ -56,5 +62,20 @@ public class GmailLoginPage extends PageObject {
         LOGGER.info(logMessage);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.clickAndHold(this.webDriver);
+        return verifyWrongMessage();
+    }
+
+    private boolean verifyWrongMessage() {
+        String logMessage;
+        boolean result;
+        if (!wrongPasswordTextElement.getText().isEmpty()) {
+            logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.getAttribute("innerText"));
+            AllureStepListener.log(logMessage);
+            LOGGER.error(logMessage);
+            result = false;
+        } else {
+            result = true;
+        }
+        return result;
     }
 }

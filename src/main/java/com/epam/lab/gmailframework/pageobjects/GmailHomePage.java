@@ -67,18 +67,6 @@ public class GmailHomePage extends PageObject {
         LOGGER.info(logMessage);
     }
 
-    public boolean isLoggedIn() {
-        waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
-        if (writeActionElement.isFullEnabled()) {
-            String logMessage = "User successfully logged in";
-            AllureStepListener.log(logMessage);
-            LOGGER.info(logMessage);
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public void getLetterFromDraft() {
         getLettersFromSection(mailSections.stream().filter(item -> item.getAttribute("href").toLowerCase().contains("drafts".toLowerCase())).findFirst().get().getAttribute("href"));
     }

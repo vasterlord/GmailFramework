@@ -14,9 +14,6 @@ public class GmailHomeBO {
         gmailHomePage = new GmailHomePage();
     }
 
-    public boolean isSignIn() {
-        return gmailHomePage.isLoggedIn();
-    }
 
     public boolean isLetterSavedInDraft(Letter letter) {
         gmailHomePage.writeLetter(letter.getReceiverEmail(), letter.getSubjectText(), letter.getContentLetter());
