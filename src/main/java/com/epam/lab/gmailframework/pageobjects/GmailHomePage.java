@@ -7,6 +7,7 @@ import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +19,7 @@ public class GmailHomePage extends PageObject {
     private static final Logger LOGGER = Logger.getLogger(GmailHomePage.class);
 
     @FindBy(xpath = "//div[@class='T-I J-J5-Ji T-I-KE L3']")
-    private Button writeActionElement;
+    private List<Button> writeActionElement;
 
     @FindBy(xpath = "//textarea[@class='vO']")
     private TextInput receiverElement;
@@ -50,8 +51,7 @@ public class GmailHomePage extends PageObject {
     }
 
     public void writeLetter(String receiverText, String subjectText, String contentLetterText) {
-        waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
-        writeActionElement.click();
+        writeActionElement.get(0).click();
         String logMessage = "Compose button was clicked";
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
@@ -65,6 +65,17 @@ public class GmailHomePage extends PageObject {
         logMessage = "Letter was closed";
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
+    }
+
+    public boolean isLoggedIn() {
+            if (writeActionElement.size() > 0) {
+                String logMessage = "User successfully logged in";
+                AllureStepListener.log(logMessage);
+                LOGGER.info(logMessage);
+                return true;
+            } else {
+                return false;
+            }
     }
 
     public void getLetterFromDraft() {

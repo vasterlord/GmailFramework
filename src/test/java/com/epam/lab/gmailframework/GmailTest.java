@@ -28,10 +28,12 @@ public class GmailTest {
         try {
             testMethodLogMessage = "Test method has started running";
             AllureStepListener.log(testMethodLogMessage);
+
             GmailLoginBO gmailLoginBO = new GmailLoginBO();
-            Assert.assertTrue(gmailLoginBO.isSignIn(user),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
-                    "Sing in was failed. Please, check your credentials"));
+            gmailLoginBO.signIn(user);
             GmailHomeBO gmailHomeBO = new GmailHomeBO();
+            Assert.assertTrue(gmailHomeBO.isSignIn(),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
+                    "Sing in was failed. Please, check your credentials"));
             Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
                     "Letter didn't saved in draft"));
             Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
