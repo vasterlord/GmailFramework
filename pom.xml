@@ -29,8 +29,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
-                    <forkCount>3</forkCount>
-                    <reuseForks>true</reuseForks>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testngsuite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
@@ -52,9 +53,19 @@
                             <name>allure.link.issue.pattern</name>
                             <value>https://example.org/issue/{}</value>
                         </property>
+                        <property>
+                            <name>parallel</name>
+                            <value>classes</value>
+                        </property>
+                        <property>
+                            <name>threadcount</name>
+                            <value>3</value>
+                        </property>
+                        <property>
+                            <name>dataproviderthreadcount</name>
+                            <value>3</value>
+                        </property>
                     </systemProperties>
-                    <parallel>tests</parallel>
-                    <threadCount>3</threadCount>
                 </configuration>
             </plugin>
 
@@ -126,7 +137,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>4.7</version>
             <scope>test</scope>
         </dependency>
 

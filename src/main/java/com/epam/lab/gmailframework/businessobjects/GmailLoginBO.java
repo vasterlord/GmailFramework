@@ -8,9 +8,11 @@ public class GmailLoginBO {
 
     private GmailLoginPage gmailLoginPage;
 
-    public void signIn(User user) {
+    public GmailLoginBO() {
         gmailLoginPage = new GmailLoginPage();
-        gmailLoginPage.typeLoginAndSubmit(user.getUserEmail());
-        gmailLoginPage.typePasswordAndSubmit(user.getUserPassword());
+    }
+
+    public boolean signIn(User user) {
+        return gmailLoginPage.typeLoginAndSubmit(user.getUserEmail()) && gmailLoginPage.typePasswordAndSubmit(user.getUserPassword());
     }
 }

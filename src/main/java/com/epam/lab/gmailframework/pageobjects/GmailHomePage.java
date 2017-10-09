@@ -6,7 +6,6 @@ import com.epam.lab.gmailframework.controls.Label;
 import com.epam.lab.gmailframework.controls.TextInput;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
-import io.qameta.allure.Step;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
@@ -51,7 +50,6 @@ public class GmailHomePage extends PageObject {
     }
 
     public void writeLetter(String receiverText, String subjectText, String contentLetterText) {
-        waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
         writeActionElement.click();
         String logMessage = "Compose button was clicked";
         AllureStepListener.log(logMessage);
@@ -66,18 +64,6 @@ public class GmailHomePage extends PageObject {
         logMessage = "Letter was closed";
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
-    }
-
-    public boolean isLoggedIn() {
-        waitPresenceOfElement("//div[@class='T-I J-J5-Ji T-I-KE L3']");
-        if (writeActionElement.isFullEnabled()) {
-            String logMessage = "User successfully logged in";
-            AllureStepListener.log(logMessage);
-            LOGGER.info(logMessage);
-            return true;
-        } else {
-            return false;
-        }
     }
 
     public void getLetterFromDraft() {
@@ -99,7 +85,7 @@ public class GmailHomePage extends PageObject {
     }
 
     private boolean isSavedInSection(String subjectText, String contentLetterText, String lettersSectionName) {
-        boolean isSaved = false;
+        boolean isSaved;
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
             String logPositiveMessage = String.format("Message successfully saved in %s", lettersSectionName);
             AllureStepListener.log(logPositiveMessage);

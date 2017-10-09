@@ -1,11 +1,9 @@
 package com.epam.lab.gmailframework.utils.testreporting;
 
-import io.qameta.allure.Step;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Layout;
 import org.apache.log4j.spi.LoggingEvent;
 import org.testng.Reporter;
-
 
 public class TestNGReportAppender extends AppenderSkeleton
 {

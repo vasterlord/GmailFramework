@@ -38,7 +38,7 @@ exclude(module: 'testng')
     compile group: 'log4j', name: 'log4j', version:'1.2.17'
     compile group: 'org.apache.poi', name: 'poi-ooxml', version:'3.15'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'2.47.1'
-    testCompile group: 'junit', name: 'junit', version:'4.10'
+    testCompile group: 'junit', name: 'junit', version:'4.7'
     testCompile group: 'org.hamcrest', name: 'hamcrest-all', version:'1.3'
     testCompile group: 'com.tngtech.java', name: 'junit-dataprovider', version:'1.10.0'
     testCompile group: 'info.cukes', name: 'cucumber-junit', version:'1.0.2'
