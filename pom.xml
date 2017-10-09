@@ -31,6 +31,9 @@
                 <configuration>
                     <!--<forkCount>3</forkCount>-->
                     <!--<reuseForks>true</reuseForks>-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testngsuite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <properties>
                         <property>
                             <name>usedefaultlisteners</name>
