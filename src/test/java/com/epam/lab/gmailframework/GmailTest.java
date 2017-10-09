@@ -30,10 +30,9 @@ public class GmailTest {
             AllureStepListener.log(testMethodLogMessage);
 
             GmailLoginBO gmailLoginBO = new GmailLoginBO();
-            gmailLoginBO.signIn(user);
+            Assert.assertTrue(gmailLoginBO.signIn(user),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
+                    "Sing in was failed. Please, check your credentials: "));
             GmailHomeBO gmailHomeBO = new GmailHomeBO();
-            Assert.assertTrue(gmailHomeBO.isSignIn(),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
-                    "Sing in was failed. Please, check your credentials"));
             Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
                     "Letter didn't saved in draft"));
             Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
