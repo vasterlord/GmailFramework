@@ -29,7 +29,6 @@ public class WebDriverUtils {
         } finally {
             WEB_DRIVER_THREAD_LOCAL.remove();
         }
-
     }
 
 }
