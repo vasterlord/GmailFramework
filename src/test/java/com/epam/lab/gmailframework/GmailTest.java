@@ -6,6 +6,7 @@ import com.epam.lab.gmailframework.models.User;
 import com.epam.lab.gmailframework.utils.DataUtils;
 import com.epam.lab.gmailframework.utils.WebDriverUtils;
 import com.epam.lab.gmailframework.utils.testreporting.AllureStepListener;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
@@ -16,35 +17,29 @@ import java.util.List;
 public class GmailTest {
 
     private static final String TEST_METHOD_RESULT_WAS_FAILURE = "Test method result was failure: ";
+    private static final Logger LOGGER = Logger.getLogger(GmailTest.class);
 
     @AfterMethod
     public void tearDown() throws Exception {
+        LOGGER.info("Quite");
         WebDriverUtils.quit();
     }
 
     @Test(dataProvider = "testData")
     public void testGmailFunctionality(User user) {
         String testMethodLogMessage;
-        try {
-            testMethodLogMessage = "Test method has started running";
-            AllureStepListener.log(testMethodLogMessage);
-
-            GmailLoginBO gmailLoginBO = new GmailLoginBO();
-            Assert.assertTrue(gmailLoginBO.signIn(user),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
-                    "Sing in was failed. Please, check your credentials: "));
-            GmailHomeBO gmailHomeBO = new GmailHomeBO();
-            Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
-                    "Letter didn't saved in draft"));
-            Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()),String.format("%s%s",TEST_METHOD_RESULT_WAS_FAILURE,
-                    "Letter didn't send"));
-            testMethodLogMessage = "Test method result was success";
-            AllureStepListener.log(testMethodLogMessage);
-        } finally {
-            String quiteLogMessage = "Test method was completed";
-            AllureStepListener.log(quiteLogMessage);
-            quiteLogMessage = "Quiting browser";
-            AllureStepListener.log(quiteLogMessage);
-        }
+        testMethodLogMessage = "Test method has started running";
+        //AllureStepListener.log(testMethodLogMessage);
+        GmailLoginBO gmailLoginBO = new GmailLoginBO();
+        Assert.assertTrue(gmailLoginBO.signIn(user), String.format("%s%s", TEST_METHOD_RESULT_WAS_FAILURE,
+                "Sing in was failed. Please, check your credentials: "));
+        GmailHomeBO gmailHomeBO = new GmailHomeBO();
+        Assert.assertTrue(gmailHomeBO.isLetterSavedInDraft(user.getLetter()), String.format("%s%s", TEST_METHOD_RESULT_WAS_FAILURE,
+                "Letter didn't saved in draft"));
+        Assert.assertTrue(gmailHomeBO.isLetterSent(user.getLetter()), String.format("%s%s", TEST_METHOD_RESULT_WAS_FAILURE,
+                "Letter didn't send"));
+        //testMethodLogMessage = "Test method result was success";
+        //AllureStepListener.log(testMethodLogMessage);
     }
 
     @DataProvider(name = "testData", parallel = true)

@@ -29,24 +29,25 @@ public class GmailLoginPage extends PageObject {
     private WebElement wrongPasswordTextElement;
 
     public GmailLoginPage() {
-        AllureStepListener.log("Starting browser");
+        //AllureStepListener.log("Starting browser");
         LOGGER.info("Starting browser");
         String startUrl = configurationProperties.getStartURL();
         this.webDriver.navigate().to(startUrl);
         String logMessage = String.format("Navigate to: %s", startUrl);
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         String signInUrl = signInElement.getAttribute("href");
         this.webDriver.navigate().to(signInUrl);
         logMessage = String.format("Navigate to: %s", signInUrl);
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
     }
 
     public boolean typeLoginAndSubmit(String email) {
         String logMessage = "Entering credentials...";
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
+        LOGGER.info("Input email");
         inputEmailElement.sendKeys(email);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.click();
@@ -56,6 +57,7 @@ public class GmailLoginPage extends PageObject {
 
     public boolean typePasswordAndSubmit(String password) {
         waitPresenceOfElement("//div[normalize-space(@class)='Xb9hP']/input[normalize-space(@type)='password']");
+        LOGGER.info("Input password");
         passwordElement.sendKeys(password);
         waitPresenceOfElement("//content[@class='CwaK9']/span[1]");
         nextClickElement.click();
@@ -77,7 +79,7 @@ public class GmailLoginPage extends PageObject {
         boolean result;
         if (!wrongPasswordTextElement.getText().isEmpty()) {
             logMessage = String.format("Gmail error message: %s", wrongPasswordTextElement.getAttribute("innerText"));
-            AllureStepListener.log(logMessage);
+            //AllureStepListener.log(logMessage);
             LOGGER.error(logMessage);
             result = false;
         } else {

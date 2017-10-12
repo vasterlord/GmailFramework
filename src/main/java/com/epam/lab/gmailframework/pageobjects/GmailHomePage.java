@@ -52,17 +52,17 @@ public class GmailHomePage extends PageObject {
     public void writeLetter(String receiverText, String subjectText, String contentLetterText) {
         writeActionElement.click();
         String logMessage = "Compose button was clicked";
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         receiverElement.sendKeys(receiverText);
         subjectElement.sendKeys(subjectText);
         contentLetterElement.sendKeys(contentLetterText);
         logMessage = "Letter successfully was written";
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         closeLetterActionElement.click();
         logMessage = "Letter was closed";
-        AllureStepListener.log(logMessage);
+       // AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
     }
 
@@ -88,12 +88,12 @@ public class GmailHomePage extends PageObject {
         boolean isSaved;
         if (letterSubjectElement.getText().equalsIgnoreCase(subjectText) && letterContentElement.getText().toLowerCase().contains(contentLetterText.toLowerCase())) {
             String logPositiveMessage = String.format("Message successfully saved in %s", lettersSectionName);
-            AllureStepListener.log(logPositiveMessage);
+            //AllureStepListener.log(logPositiveMessage);
             LOGGER.info(logPositiveMessage);
             isSaved = true;
         } else {
             String logNegativeMessage = String.format("Message didn't save in %s", lettersSectionName);
-            AllureStepListener.log(logNegativeMessage);
+            //AllureStepListener.log(logNegativeMessage);
             LOGGER.error(logNegativeMessage);
             isSaved = false;
         }
@@ -105,14 +105,14 @@ public class GmailHomePage extends PageObject {
         waitPresenceOfElement("//div[@class='T-I J-J5-Ji aoO T-I-atl L3']");
         sendLetterActionElement.click();
         String logMessage = "Message from draft successfully sent";
-        AllureStepListener.log(logMessage);
+       // AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
     }
 
     private void getLettersFromSection(String maiLSectionURL) {
         this.webDriver.navigate().to(maiLSectionURL);
         String logMessage = String.format("Navigate to: %s", maiLSectionURL);
-        AllureStepListener.log(logMessage);
+        //AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
         new WebDriverWait(WebDriverUtils.getWebDriverThreadLocal(), configurationProperties.getTimeOutInSeconds()).until(ExpectedConditions.urlToBe(maiLSectionURL));
     }
