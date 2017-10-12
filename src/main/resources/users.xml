@@ -2,7 +2,7 @@
 <users>
     <users>
         <userEmail>Tarchanihor@gmail.com</userEmail>
-        <userPassword>qweqweqwe1</userPassword>
+        <userPassword>qweqweqwe</userPassword>
         <letter>
             <contentLetter>It's letter sent from testng selenium test to balatskiyandr@gmail.com</contentLetter>
             <receiverEmail>balatskiyandr@gmail.com</receiverEmail>
