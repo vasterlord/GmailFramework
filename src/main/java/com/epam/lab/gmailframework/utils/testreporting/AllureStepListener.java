@@ -11,8 +11,6 @@ public class AllureStepListener extends LifecycleListener {
     @Step("{0}")
     public synchronized static void log(String message) {
         Allure.LIFECYCLE.fire(new StepStartedEvent(message));
-        Allure.LIFECYCLE.fire(new StepFinishedEvent());
-        Allure.LIFECYCLE.fire(new StepFailureEvent());
         Reporter.log(message);
     }
 }
