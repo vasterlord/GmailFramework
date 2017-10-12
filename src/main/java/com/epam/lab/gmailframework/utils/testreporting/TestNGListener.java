@@ -8,7 +8,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
     private static final Logger LOGGER = Logger.getLogger(TestNGListener.class);
 
     @Override
-    public void onTestStart(ITestResult iTestResult) {
+    public synchronized void onTestStart(ITestResult iTestResult) {
         String logMessage = String.format("Test method has started running: %s", iTestResult.getMethod().getMethodName());
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
