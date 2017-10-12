@@ -15,7 +15,7 @@ public class TestNGListener implements ITestListener, ISuiteListener {
     }
 
     @Override
-    public void onTestSuccess(ITestResult iTestResult) {
+    public synchronized void onTestSuccess(ITestResult iTestResult) {
         String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was success");
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
@@ -23,14 +23,14 @@ public class TestNGListener implements ITestListener, ISuiteListener {
 
 
     @Override
-    public void onTestFailure(ITestResult iTestResult) {
+    public synchronized void onTestFailure(ITestResult iTestResult) {
         String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), " result was failure");
         AllureStepListener.log(logMessage);
         LOGGER.error(logMessage);
     }
 
     @Override
-    public void onTestSkipped(ITestResult iTestResult) {
+    public synchronized void onTestSkipped(ITestResult iTestResult) {
         String logMessage = String.format("Test method :%s%s", iTestResult.getMethod().getMethodName(), "  was skipped");
         AllureStepListener.log(logMessage);
         LOGGER.error(logMessage);
@@ -38,19 +38,19 @@ public class TestNGListener implements ITestListener, ISuiteListener {
 
 
     @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+    public synchronized void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
     }
 
 
     @Override
-    public void onStart(ITestContext iTestContext) {
+    public synchronized void onStart(ITestContext iTestContext) {
         String logMessage = String.format("About to begin executing test: %s", iTestContext.getName());
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
     }
 
     @Override
-    public void onFinish(ITestContext iTestContext) {
+    public synchronized void onFinish(ITestContext iTestContext) {
         String logPassedTestsMessage = String.format("Passed tests: %s", iTestContext.getPassedTests());
         AllureStepListener.log(logPassedTestsMessage);
         LOGGER.info(logPassedTestsMessage);
@@ -61,14 +61,14 @@ public class TestNGListener implements ITestListener, ISuiteListener {
 
 
     @Override
-    public void onStart(ISuite iSuite) {
+    public synchronized void onStart(ISuite iSuite) {
         String logMessage = String.format("Begin executing suite: %s ", iSuite.getName());
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
     }
 
     @Override
-    public void onFinish(ISuite iSuite) {
+    public synchronized void onFinish(ISuite iSuite) {
         String logMessage = String.format("The end executing suite: %s ", iSuite.getName());
         AllureStepListener.log(logMessage);
         LOGGER.info(logMessage);
